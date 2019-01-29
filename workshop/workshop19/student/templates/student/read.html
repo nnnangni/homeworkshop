@@ -1,0 +1,16 @@
+{% extends "student/base.html" %}
+    
+{% block bodyblock %}
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+      <div class="card-header">Student</div>
+      <div class="card-body text-info">
+        <h3 class="card-title">{{student.name}}</h3>
+        <p class="card-text">{{student.email}}</p>
+        <p class="card-text">{{student.birthday}}</p>
+        <p class="card-text">{{student.age}}</p>
+        <a href="/students/{{student.id}}/delete/">삭제</a>
+        <a href="/students/{{student.id}}/edit/">수정</a>
+      </div>
+    </div>
+{% endblock %}
+

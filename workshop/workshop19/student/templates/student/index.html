@@ -1,0 +1,17 @@
+{% extends "student/base.html" %}
+
+{% block bodyblock %}
+    <div class="alert alert-primary" role="alert">
+      여기는 INDEX 입니다!
+    </div>
+    {% for student in students %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{student.name}}</h5>
+            <p class="card-text">{{student.age}}</p>
+            <a href="/students/{{student.pk}}" class="card-link">학생정보보기</a>
+          </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

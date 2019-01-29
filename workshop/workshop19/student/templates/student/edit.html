@@ -1,0 +1,28 @@
+{% extends "student/base.html" %}
+
+{% block bodyblock %}
+    <form action="/students/{{student.id}}/update/" method="post">
+      {% csrf_token %}
+      <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label for="exampleInputname">NAME</label>
+            <input type="text" class="form-control" name="name" value="{{student.name}}">
+          </div>
+          <div class="col-auto">
+            <label for="exampleInputemail">EMAIL</label>
+            <input type="email" class="form-control" name="email" value="{{student.email}}">
+          </div>
+          <div class="col-auto">
+            <label for="exampleInputday">BIRTHDAY</label>
+            <input type="date" class="form-control" name="birthday" value="{{student.birthday|date:'Y-m-d'}}">
+          </div>
+          <div class="col-auto">
+            <label for="exampleInputage">AGE</label>
+            <input type="text" class="form-control" name="age" value="{{student.age}}">
+          </div>
+          <div class="col-auto">
+              <input type="submit" value="Submit"/>
+          </div>
+      </div>
+    </form>
+{% endblock %}

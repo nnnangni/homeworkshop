@@ -1,0 +1,28 @@
+{% extends "student/base.html" %}
+
+{% block bodyblock %}
+    <form action="/students/create/" method="post">
+      {% csrf_token %}
+      <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label for="exampleInputname">NAME</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="col-auto">
+            <label for="exampleInputemail">EMAIL</label>
+            <input type="email" class="form-control" name="email">
+          </div>
+          <div class="col-auto">
+            <label for="exampleInputday">BIRTHDAY</label>
+            <input type="date" class="form-control" name="birthday">
+          </div>
+          <div class="col-auto">
+            <label for="exampleInputage">AGE</label>
+            <input type="text" class="form-control" name="age">
+          </div>
+          <div class="col-auto">
+              <input type="submit" value="Submit"/>
+          </div>
+      </div>
+    </form>
+{% endblock %}
